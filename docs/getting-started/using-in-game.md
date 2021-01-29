@@ -88,14 +88,14 @@ Each `AsepriteTag` instance provides the values of an animation tag including th
 |---|---|---
 | Name | `string` | Gets the name of the tag as defined in Aseprite file. |
 | From | `int` | Gets the index of the `AsepriteFrame` the tag starts on. |
-| To | `int` | Gets the index of the `AsepriteFarme` the tag ends on. |
+| To | `int` | Gets the index of the `AsepriteFrame` the tag ends on. |
 | Color | `Color` | Gets the color of the tag as defined in the Aseprite file. |
 | Direction | `AsepriteTagDirection` | Gets the direction the of the tag as an `AsepriteTagDirection` enum. |
 | | | `AsepriteTagDirection.Forward` means the tag should play in a foward direction from the starting frame to the ending frame. |
-| | | `AsepriteTagDirection.Reverse` means the tag should play in a reverse direction from teh ending frame to the starting frame. |
+| | | `AsepriteTagDirection.Reverse` means the tag should play in a reverse direction from the ending frame to the starting frame. |
 | | | `AsepriteTagDirection.PingPong` means the tag should play first in a forward direction from the stating to the ending frame, then in a reverse direction from the ending frame to the starting frame. |
 
 ## Conclusion
 When importing the Aseprite file into your game though the content pipeline, you are provided an `AsepriteDocument` object with all the information needed from the Aseprite file to create your sprite animations.  
 
-**Monogame.Aseprite** does provide an out-of-box class called `AnimatedSprite` that takes advantage of the `AsepriteDocument` object to create the aniamted sprites for you if you don't want to roll your own solution.  In the next document, we'll go over this aniamted sprite class and how you can use it in game if you like.
+**Monogame.Aseprite** does provide an out-of-box class called `AnimatedSprite` that takes advantage of the `AsepriteDocument` object to create the aniamted sprites for you if you don't want to roll your own solution.  In the next document, we'll go over this animated sprite class and how you can use it in game if you like.
