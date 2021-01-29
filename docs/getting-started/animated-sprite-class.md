@@ -11,14 +11,14 @@ The `AnimatedSprite` class is an out-of-the-box solution for using the `Aseprite
 
 :::note Out-of-the-box Solutions
 
-As stated, the `AniamtedSprite is an out-of-the-box solution.  It is not going to fit every need that a user may have when it comes to animating their sprites.  With that in mind, it is designed to provide most of what you would need as a foundation.  Feel free to submit feedback on the GitHub repository for any suggestions on the class design and function.
+As stated, the `AnimatedSprite is an out-of-the-box solution.  It is not going to fit every need that a user may have when it comes to animating their sprites.  With that in mind, it is designed to provide most of what you would need as a foundation.  Feel free to submit feedback on the GitHub repository for any suggestions on the class design and function.
 
 :::
 
 Below we'll go over how to instantiate a new instance of the class using the `AsepriteDocument`, and go over how to play an animation, and the various properties that are accessable to the class.
 
 ## Creating a New Instance
-To create a new instance of the `AnimatedSprite` class, you an call the `AnimatedSprite(AsepriteDocument)` constructor.  First you'll need to import the `AsepriteDocument`, then you can create the class.  Here is an exmaple
+To create a new instance of the `AnimatedSprite` class, you can call the `AnimatedSprite(AsepriteDocument)` constructor.  First you'll need to import the `AsepriteDocument`, then you can create the class.  Here is an exmaple
 
 ```csharp
 using Monogame.Aseprite.Documents;
@@ -29,8 +29,8 @@ AsepriteDocument aseprite = Content.Load<AsepriteDocument>("player_animations");
 AnimatedSprite sprite = new AnimatedSprite(aseprite);
 ```
 
-## Updating the Instnace
-You will need to call the `Udpate` method each game update cycle in order for the animations to actual update and play correctly.  To update methods are provided.  The first `Update(GameTime)` takes a `GameTime` instance.  The other overload method is `Update(float)` and takes a delta time value which is the total seconds since the last update.  This is provided for users who pre calculate the delta time and would rather use that one. Here are examples of both being used
+## Updating the Instance
+You will need to call the `Update` method each game update cycle in order for the animations to actual update and play correctly.  To update methods are provided.  The first `Update(GameTime)` takes a `GameTime` instance.  The other overload method is `Update(float)` and takes a delta time value which is the total seconds since the last update.  This is provided for users who pre calculate the delta time and would rather use that one. Here are examples of both being used
 
 ```csharp
 sprite.Update(gameTime);
@@ -72,7 +72,7 @@ If the animation that you tell it to play is the current animation that is alrea
 ## Invokable Actions
 The `AniamtedSprite` class has three `Action` properties that you can set to be called during different stages of an animation. These are `OnFrameBegin`, `OnFrameEnd` and `OnAnimationLoop`.  Using these actions can give further control to how you use the class.
 
-Before we learn to use these actions however, we need to understand the timing in which each actoin is called.  The following psuedo code serves to demonstrate the update method of the animated sprite to show the timigs of the action invocations.
+Before we learn to use these actions however, we need to understand the timing in which each action is called.  The following psuedo code serves to demonstrate the update method of the animated sprite to show the timings of the action invocations.
 
 ```
 Update
@@ -133,7 +133,7 @@ sprite.OnAnimationBegin() =>
 };
 ```
 
-The `OnAnimationLoop` action is interesting because you can use it to switch to a different animation when the current one finishes playing.  For exmaple, lets say you have an attack animation, and you want to switch to an idle animation after the attack.  You can do so like this
+The `OnAnimationLoop` action is interesting because you can use it to switch to a different animation when the current one finishes playing.  For example, lets say you have an attack animation, and you want to switch to an idle animation after the attack.  You can do so like this
 
 ```csharp
 sprite.Play("attack");
@@ -145,4 +145,4 @@ sprite.OnAnimationLoop = () =>
 ```
 
 ## Conclusion
-The `AnimatedSprite` class provides a quick out-of-the-box solution that takes advantage of the `AsepriteDocument` imported to create sprite animations in your game.  It doesn't require an `AsepriteDocument`, providing methods you can use to set it all up manuallly.  To do this, or f you would like a more indepth look at the `AnimatedSprite` class, check out the [API Documentation](/api/animatedsprite). 
+The `AnimatedSprite` class provides a quick out-of-the-box solution that takes advantage of the `AsepriteDocument` imported to create sprite animations in your game.  It doesn't require an `AsepriteDocument`, providing methods you can use to set it all up manuallly.  To do this, or if you would like a more indepth look at the `AnimatedSprite` class, check out the [API Documentation](/api/animatedsprite). 
